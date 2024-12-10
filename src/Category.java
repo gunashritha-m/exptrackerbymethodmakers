@@ -1,0 +1,3 @@
+public enum Category {
+    FOOD, TRANSPORT, TRAVEL, SHOPPING, BILLS, ENTERTAINMENT, OTHER;
+}
