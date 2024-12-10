@@ -108,7 +108,7 @@ public class GUI {
         JDialog addExpenseDialog = new JDialog(frame, "Add Expense", true);
         addExpenseDialog.setSize(350, 250);
         addExpenseDialog.setLocationRelativeTo(frame);
-        addExpenseDialog.setLayout(new GridLayout(5, 2, 5, 5));  // Align components in a 5x2 grid
+        addExpenseDialog.setLayout(new GridLayout(5, 2, 5, 5));  
 
         addExpenseDialog.add(new JLabel("Category:"));
         JComboBox<Category> categoryBox = new JComboBox<>(Category.values());
@@ -127,7 +127,7 @@ public class GUI {
         addExpenseDialog.add(paymentModeBox);
 
         JButton addButton = new JButton("Add");
-        addButton.setBackground(new Color(50, 205, 50));  // Custom color for 'Add' button
+        addButton.setBackground(new Color(50, 205, 50));
         addButton.setForeground(Color.WHITE);
         addButton.setFont(new Font("Arial", Font.BOLD, 14));
         addButton.setBorder(new LineBorder(Color.BLACK, 1));
@@ -137,9 +137,9 @@ public class GUI {
                 double amount = Double.parseDouble(amountField.getText());
                 String description = descriptionField.getText();
 
-                // Determine if the expense should be regular or luxury
+           
                 Expense expense;
-                if (amount > user.getTotalBudget() / 2 || amount > 1000) {
+                if (amount > user.getTotalBudget() / 2 ) {
                     expense = new LuxuryExpense(category, amount, description);
                 } else {
                     expense = new RegularExpense(category, amount, description);
@@ -159,7 +159,7 @@ public class GUI {
         });
 
         JButton cancelButton = new JButton("Cancel");
-        cancelButton.setBackground(new Color(220, 20, 60));  // Custom color for 'Cancel' button
+        cancelButton.setBackground(new Color(220, 20, 60));  
         cancelButton.setForeground(Color.WHITE);
         cancelButton.setFont(new Font("Arial", Font.BOLD, 14));
         cancelButton.setBorder(new LineBorder(Color.BLACK, 1));
@@ -229,7 +229,7 @@ public class GUI {
         deleteExpenseDialog.add(scrollPane, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));  // Center the buttons
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER)); 
 
         JButton deleteButton = createColoredButton("Delete", new Color(241, 92, 93));
         deleteButton.addActionListener(e -> {
